@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### To deploy with firebase
+run `npm ci && npm run build`
+then `firebase deploy --only hosting`
+
+
+### Tech used
+- React JS
+- Three Js (react-three-fiber)
+- dreu
+
+### find the project at 
+Project Console: https://console.firebase.google.com/project/myworld-b449e/overview
+Hosting URL: https://myworld-b449e.web.app
