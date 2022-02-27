@@ -1,3 +1,47 @@
+### To deploy with firebase
+run `npm ci && npm run build`
+then `firebase deploy --only hosting`
+
+### Tech used
+- React JS
+- Three Js (react-three-fiber)
+- drei
+
+### Necessary libraries and function
+- [react-colorful](https://www.npmjs.com/package/react-colorful): color picker component for React
+- [drei](https://github.com/pmndrs/drei): provides useful add ons to react-three-fiber, like cameras, plane, and controls
+- [valtio](https://github.com/pmndrs/valtio): a lightweight, proxy-based state management tool for React
+- [gltf-pipeline](https://github.com/CesiumGS/gltf-pipeline): Help to preprocess the gltf into glb for better integration.
+
+### find the project at 
+Project Console: https://console.firebase.google.com/project/myworld-b449e/overview
+Hosting URL: https://myworld-b449e.web.app
+
+### To look at the 3D design
+In VS Code, install gltf tool extension.
+While opening gltf file, run `>glTF: Preview 3D Model` or inspect data then click on the show model button.
+To upload file, use the `.glb` format.
+
+### [Processing the 3D model](https://blog.logrocket.com/configure-3d-models-react-three-fiber/)
+1. Converting into `.glb` file: `cd` into the model folder and run `gltf-pipeline -i <source-file> -o <output-file>`.
+2. Compressing the model: `gltf-pipeline -i <source-file> -o <output-file> --draco.compressionLevel=10`
+3. Break down and compile the model into declarative and reusable JSX component by running `npx gltfjsx <glTF model source file>`
+4. Make sure that the new `.js` file is usseing `useGLTF()` on the `.glb` file.
+5. Copy the `.glb` file into `/public`.
+6. Do not forget to have a `<Suspense></Suspense>` wrap.
+
+### Credits
+- [Shiba](https://skfb.ly/6WxVW) by zixisun02 is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+- [Computer Terminal](https://skfb.ly/6vrwA) by Chris Sweetwood is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+- [Football](https://skfb.ly/6ur7P) by BSlegt is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+- [Rustic halt](https://skfb.ly/6T8VC) by Geoffrey Marchal is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+- All models are downloaded from sketchfab.com.
+
+### TODO next
+use all the models that represent who I am and put it on the first page.
+
+--------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,17 +113,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-### To deploy with firebase
-run `npm ci && npm run build`
-then `firebase deploy --only hosting`
-
-
-### Tech used
-- React JS
-- Three Js (react-three-fiber)
-- dreu
-
-### find the project at 
-Project Console: https://console.firebase.google.com/project/myworld-b449e/overview
-Hosting URL: https://myworld-b449e.web.app
