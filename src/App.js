@@ -4,7 +4,9 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import Box from './components/Box';
 import Loader from './components/Loader';
-import Shiba from './components/Shiba';
+import Football from './components/Football';
+import Computer from './components/Computer';
+import Painting from './components/Painting';
 
 function App() {
   return (
@@ -19,10 +21,12 @@ function App() {
           <ambientLight intensity={1}/>
           <pointLight position={[10, 10, 10]} />
           <Suspense fallback={Loader}>
-            <Shiba />
+            <Football />
+            <Computer />
+            <Painting />
           </Suspense>
-          <Box position={[-2, 0, 0]} />
-          <Box position={[2, 0, 0]} />
+          {/* <Box position={[-2, 0, 0]} />
+          <Box position={[2, 0, 0]} /> */}
       </Canvas>
     </div>
 
